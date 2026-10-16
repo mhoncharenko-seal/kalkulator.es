@@ -39,6 +39,10 @@ git push
 
 Guarda o confirma tus cambios locales antes de cambiar de ordenador. El repositorio conserva el código fuente; `dist/`, los ZIP y las copias de seguridad locales se excluyen con `.gitignore`.
 
+## Menú de calculadoras
+
+La portada de cada idioma (`/es/`, `/uk/`, `/en/`, `/ru/`) muestra el menú. Pensiones está activa en `/{idioma}/pensiones/`. Impuestos, Hipotecas y Salario neto son botones desactivados con un sello rojo de próxima disponibilidad. La portada funciona sin JavaScript.
+
 ## Recorrido actual
 
 1. Años completos cotizados en España, sin meses.

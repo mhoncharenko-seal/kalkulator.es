@@ -24,13 +24,18 @@ test('isolated builds preserve translated form structure, assets, FAQ, SEO and e
    assert.equal(run.status,0,run.stderr);
    const dist=path.join(tmp,'dist');
    for(const lang of locales){
-    const h=fs.readFileSync(path.join(dist,lang,'index.html'),'utf8');
+    const home=fs.readFileSync(path.join(dist,lang,'index.html'),'utf8');
+    assert.ok(home.includes(`href="/${lang}/pensiones/"`));
+    assert.equal((home.match(/type="button" disabled/g)||[]).length,3);
+    assert.equal((home.match(/class="coming-stamp"/g)||[]).length,3);
+    assert.ok(!home.includes('/app.mjs'));
+    const h=fs.readFileSync(path.join(dist,lang,'pensiones','index.html'),'utf8');
     assert.ok(h.includes(`<html lang="${lang}">`));
     assert.equal([...h.matchAll(/aria-current="page"/g)].length,1);
-    assert.ok(h.includes(`href="/${lang}/" aria-current="page"`));
+    assert.ok(h.includes(`href="/${lang}/pensiones/" aria-current="page"`));
     assert.ok(h.includes(`<title>${escape(translations[lang].metaTitle)}</title>`));
     assert.ok(h.includes(`content="${escape(translations[lang].metaDescription)}"`));
-    assert.ok(h.includes(`rel="canonical" href="https://kalkulator.es/${lang}/"`));
+    assert.ok(h.includes(`rel="canonical" href="https://kalkulator.es/${lang}/pensiones/"`));
     for(const alternate of [...locales,'x-default'])assert.ok(h.includes(`hreflang="${alternate}"`));
     assert.ok(h.includes(`content="${production?'index,follow':'noindex,nofollow'}"`));
     assert.deepEqual([...h.matchAll(/<(?:input|select|textarea)\b[^>]*name="([^"]+)"/g)].map(m=>m[1]),fields);
@@ -46,7 +51,7 @@ test('isolated builds preserve translated form structure, assets, FAQ, SEO and e
    assert.ok(fs.readFileSync(path.join(dist,'docs/.htaccess'),'utf8').includes('X-Robots-Tag "noindex, nofollow"'));
    assert.ok(!fs.existsSync(path.join(dist,'docs/borrador-private.md')));
    const sitemap=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
-   assert.equal([...sitemap.matchAll(/<loc>/g)].length,production?4:0);
+   assert.equal([...sitemap.matchAll(/<loc>/g)].length,production?8:0);
    assert.ok(!/draft|borrador|docs\//.test(sitemap));
    assert.ok(fs.readFileSync(path.join(dist,'robots.txt'),'utf8').includes(production?'Sitemap: https://kalkulator.es/sitemap.xml':'Disallow: /'));
   }
