@@ -80,4 +80,4 @@ for(const [lang,text] of Object.entries({es:'← Todas las calculadoras',uk:'←
 
 import {resultText} from './result-i18n.mjs';
 for(const locale of locales)Object.assign(translations[locale],resultText[locale]);
-Object.assign(localeNames,{es:'ES',ru:'RU',uk:'UK',en:'EN'});
+Object.assign(localeNames,{es:'Es',uk:'Ukr',en:'En',ru:'Rus'});
