@@ -13,10 +13,11 @@ const stepNames=['stepSpain','stepUkraine','stepAge','stepBase','stepUkrainePens
 const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 function values(form){return Object.fromEntries([...new FormData(form)].map(([k,v])=>[k,form.elements[k].type==='number'?(v===''?null:Number(v)):v]));}
 function translate(){
+ document.querySelectorAll('.brand,.back-to-menu').forEach(a=>a.href=`/${lang}/`);
  document.documentElement.lang=lang;document.title=t('metaTitle');$('meta[name="description"]').content=t('metaDescription');
- const canonical=$('link[rel="canonical"]');if(canonical)canonical.href=`https://kalkulator.es/${lang}/`;
+ const canonical=$('link[rel="canonical"]');if(canonical)canonical.href=`https://kalkulator.es/${lang}/pensiones/`;
  document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));$('.skip').textContent=t('skip');$('#languages').setAttribute('aria-label',t('language'));
- document.querySelectorAll('#languages a').forEach(a=>{a.removeAttribute('aria-current');if(a.pathname===`/${lang}/`)a.setAttribute('aria-current','page');});
+ document.querySelectorAll('#languages a').forEach(a=>{a.removeAttribute('aria-current');if(a.pathname===`/${lang}/pensiones/`)a.setAttribute('aria-current','page');});
  $('#faq').innerHTML=[1,2,3].map(i=>`<details><summary>${esc(t(`faq${i}q`))}</summary><p>${esc(t(`faq${i}a`))}</p></details>`).join('');
  if(current)renderEligibility();if(lastMoney)renderMoney();showStep(wizardStep,false);
 }
@@ -82,6 +83,6 @@ function advance(){
  }
  showStep(wizardStep+1);
 }
-document.querySelectorAll('#languages a').forEach(a=>a.addEventListener('click',event=>{event.preventDefault();lang=a.pathname.split('/')[1];history.pushState({},'',`/${lang}/`);translate();}));
+document.querySelectorAll('#languages a').forEach(a=>a.addEventListener('click',event=>{event.preventDefault();lang=a.pathname.split('/')[1];history.pushState({},'',`/${lang}/pensiones/`);translate();}));
 window.addEventListener('popstate',()=>{lang=location.pathname.split('/')[1];if(!locales.includes(lang))lang='es';translate();});
 setupWizard();translate();showStep(1,false);
