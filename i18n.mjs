@@ -1,4 +1,4 @@
-export const locales = ['es', 'uk', 'en', 'ru'];
+export const locales = ['es', 'ru', 'uk', 'en'];
 export const localeNames = { es: 'Español', uk: 'Українська', en: 'English', ru: 'Русский' };
 export const intlLocales = { es: 'es-ES', uk: 'uk-UA', en: 'en-GB', ru: 'ru-RU' };
 export const translations = {
@@ -77,3 +77,7 @@ ru:{
 for(const locale of locales)Object.assign(translations[locale],simpleJourney[locale]);
 
 for(const [lang,text] of Object.entries({es:'← Todas las calculadoras',uk:'← Усі калькулятори',en:'← All calculators',ru:'← Все калькуляторы'})) translations[lang].allCalculators=text;
+
+import {resultText} from './result-i18n.mjs';
+for(const locale of locales)Object.assign(translations[locale],resultText[locale]);
+Object.assign(localeNames,{es:'ES',ru:'RU',uk:'UK',en:'EN'});

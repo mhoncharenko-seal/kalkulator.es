@@ -41,7 +41,7 @@ Guarda o confirma tus cambios locales antes de cambiar de ordenador. El reposito
 
 ## Menú de calculadoras
 
-La portada de cada idioma (`/es/`, `/uk/`, `/en/`, `/ru/`) muestra el menú. Pensiones está activa en `/{idioma}/pensiones/`. Impuestos, Hipotecas y Salario neto son botones desactivados con un sello rojo de próxima disponibilidad. La portada funciona sin JavaScript.
+La portada de cada idioma (`/es/`, `/uk/`, `/en/`, `/ru/`) muestra el menú. Pensiones está activa en `/{idioma}/pensiones/`. Donaciones Cataluña, ITP Cataluña, Sucesiones, Salario neto, Hipotecas y Jubilación España aparecen desactivadas en gris. El registro declarativo está en catalog.mjs. La portada funciona sin JavaScript.
 
 ## Recorrido actual
 
@@ -89,4 +89,4 @@ npm run build -- --production
 
 Para Hostinger, comprime **el contenido de `dist/`**, incluidos los archivos `.htaccess`, con `index.html` directamente en la raíz del ZIP. Sube ese paquete a `public_html` y despliega o extrae su contenido. Las actualizaciones en GitHub no se despliegan automáticamente en Hostinger.
 
-La versión actual pasó 48 pruebas automatizadas. Los archivos desplegados se verificaron mediante el conector de Hostinger; la revisión visual remota sigue pendiente por las limitaciones de conexión del entorno original.
+Consulta HANDOFF_CODEX.md para pruebas y estado real del despliegue. Los complementos positivos se muestran Por verificar; no se suman al total. La pensión ucraniana desconocida se deja vacía.

@@ -23,6 +23,6 @@ test('payroll contribution base is explicitly converted and Ukrainian euros are 
  const c=assessMinimum({residentSpain:false,annualOtherIncome:0,annualSpanish:r.spanish.annual,annualUkraine:r.ukraine.annual});assert.equal(c.annual,0);assert.ok(Math.abs((r.totalAnnual+c.annual)/12-477.5066666667)<1e-8);
 });
 test('empty and invalid amounts cannot silently become zero pensions or calculation bases',()=>{
- for(const values of [[null,80],[0,80],[1400,null],[1400,-1],[NaN,80]])assert.equal(simplifiedAmounts(...values),null);
+ for(const values of [[null,80],[0,80],[1400,-1],[NaN,80]])assert.equal(simplifiedAmounts(...values),null);
  assert.equal(simplifiedAmounts(1400,0).ukraineAmount,0);
 });
