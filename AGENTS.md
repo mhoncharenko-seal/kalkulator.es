@@ -6,7 +6,7 @@
 - `catalog.mjs` registra módulos. Cada módulo activo declara ruta, plantilla y módulo de contenido; el build genera páginas por idioma, SEO y sitemap. Inactivos no generan rutas.
 - Motor puro `engine.mjs`; parámetros/fuentes `normative.mjs`; adaptador simplificado `scenario.mjs`; presentación `pension-result.mjs`; textos de resultados `result-i18n.mjs`. No mezclar cálculo con DOM.
 - No convertir desconocido en cero. Normalizar cantidades a anual antes de sumar; presentación comparable anual/12 y pago español anual/14 explícito.
-- No activar complemento positivo desde una casilla genérica: exige comprobaciones normativas suficientes. UI actual deja pendientes los positivos; el motor conserva escenarios internos expresamente condicionados.
+- No activar complemento positivo desde una casilla genérica: exige comprobaciones normativas suficientes. La UI puede sumar un escenario condicionado de 2026 tras confirmar inicio, concurrencia completa, ingresos y situación conyugal; faltas de datos siguen pendientes.
 - Verificar fuentes oficiales al cambiar una regla; documentar alcance/fecha. No asumir que 15 años totalizados bastan para una cuantía.
 - No enviar entradas del usuario a analítica ni guardar datos económicos. No secretos en Git o distribución.
 - Ejecutar `npm test`, `npm run build`; probar recorrido, navegación de idiomas, móvil y teclado antes de publicar. No declarar Lighthouse/WCAG sin mediciones.

@@ -4,3 +4,55 @@ export const resultText = {
  uk: {totalWith:'Орієнтовна загальна сума з доплатою',pending:'Потребує перевірки',subtotal:'Розрахована проміжна сума без доплати',spainPart:'Іспанська частина',minimumPart:'Доплата до мінімальної пенсії',ukrainePart:'Українська частина',composition:'Графік складових суми',legalTitle:'Доплата залежить від виконання вимог',legalText:'Доплата до мінімальної пенсії не призначається автоматично. Вона залежить, зокрема, від звичайного місця проживання в Іспанії, граничного доходу, особистих обставин і чинного законодавства. Умови та суми можуть змінюватися щороку.',officialLink:'Переглянути нормативні акти й офіційну інформацію',missingMinimum:'Потрібно перевірити дату призначення, усі одночасно отримувані пенсії, доходи, що враховуються, та за потреби фінансову залежність чоловіка або дружини. Відповіді у формі не підтверджують виконання цих вимог.',averageBasis:'Місячний еквівалент до оподаткування: кожну річну суму поділено на 12. Це не фактична щомісячна виплата й не рішення INSS.',nativeSpain:'Іспанія: сума однієї виплати (14 виплат)',knownOnly:'Графік містить лише відомі суми; суми, які потребують перевірки, виключено.',missingUkraine:'Українська пенсія тут не розраховується. Залиште поле порожнім, якщо сума невідома; 0 означає відому нульову суму. Вкажіть євро та 12 виплат на рік.',confirmPeriods:'Підтверджую, що періоди не збігаються, а недавні місяці належать до 15 років перед запланованим виходом на пенсію.',confirmBase:'Розумію, що незмінна місячна база внесків — лише ілюстративне припущення, а не моя офіційна розрахункова база.',periodReview:'Якщо періоди збігаються або застосовується інший відлік недавнього стажу, зверніться до INSS для індивідуальної перевірки перед використанням цього розрахунку.',monthlyUnit:'€/місяць',unknownTotal:'Загальну суму неможливо визначити, поки є суми, що потребують перевірки.'},
  ru: {totalWith:'Ориентировочная общая сумма с доплатой',pending:'Требует проверки',subtotal:'Рассчитанная промежуточная сумма без доплаты',spainPart:'Испанская часть',minimumPart:'Доплата до минимальной пенсии',ukrainePart:'Украинская часть',composition:'График составляющих суммы',legalTitle:'Доплата зависит от выполнения требований',legalText:'Доплата до минимальной пенсии не назначается автоматически. Она зависит, в частности, от обычного места проживания в Испании, предельного дохода, личных обстоятельств и действующего законодательства. Условия и суммы могут меняться каждый год.',officialLink:'Посмотреть нормативные акты и официальную информацию',missingMinimum:'Нужно проверить дату назначения, все одновременно получаемые пенсии, учитываемые доходы и при необходимости финансовую зависимость супруга. Ответы в форме не подтверждают выполнение этих требований.',averageBasis:'Месячный эквивалент до налогов: каждая годовая сумма разделена на 12. Это не фактическая ежемесячная выплата и не решение INSS.',nativeSpain:'Испания: сумма одной выплаты (14 выплат)',knownOnly:'График включает только известные суммы; суммы, требующие проверки, исключены.',missingUkraine:'Украинская пенсия здесь не рассчитывается. Оставьте поле пустым, если сумма неизвестна; 0 означает известную нулевую сумму. Укажите евро и 12 выплат в год.',confirmPeriods:'Подтверждаю, что периоды не совпадают, а недавние месяцы относятся к 15 годам перед планируемым выходом на пенсию.',confirmBase:'Понимаю, что постоянная месячная база взносов — иллюстративное допущение, а не моя официальная расчётная база.',periodReview:'Если периоды совпадают или применяется другой отсчёт недавнего стажа, обратитесь в INSS для индивидуальной проверки перед использованием этого расчёта.',monthlyUnit:'€/месяц',unknownTotal:'Общую сумму невозможно определить, пока есть суммы, требующие проверки.'}
 };
+
+const supplementText={
+  "es": {
+    "minimumScope": "Mi pensión española comienza en 2026; no tengo otras pensiones aparte de las indicadas.",
+    "minimumIncome": "He incluido todos los ingresos computables. Si hay cónyuge a cargo, incluyo los ingresos conjuntos y confirmo convivencia, dependencia económica y que no percibe pensión pública.",
+    "minimumScenario": "Quiero calcular el escenario con complemento con estos datos. Entiendo que el INSS debe verificar los requisitos y que el importe no está concedido.",
+    "conditionalTotal": "Escenario condicionado: incluye el complemento estimado si se cumplen los requisitos indicados abajo.",
+    "minimumFormula": "Cálculo del complemento anual",
+    "minimumTarget": "Mínimo anual de referencia",
+    "minimumCap": "Tope anual del complemento",
+    "beforeMinimum": "Suma anual de ambas pensiones",
+    "formulaTotal": "Total anual / 12",
+    "minimumChecks": "Datos para estimar el complemento (2026)"
+  },
+  "en": {
+    "minimumScope": "My Spanish pension starts in 2026; I have no pensions other than those entered.",
+    "minimumIncome": "I have included all assessable income. For a dependent spouse, this includes our combined income, and I confirm that we live together, my spouse is financially dependent and receives no public pension.",
+    "minimumScenario": "Calculate a supplement scenario using these details. I understand that INSS must verify eligibility and this amount has not been awarded.",
+    "conditionalTotal": "Conditional scenario: includes the estimated supplement if the requirements below are met.",
+    "minimumFormula": "Annual supplement calculation",
+    "minimumTarget": "Reference annual minimum",
+    "minimumCap": "Annual supplement cap",
+    "beforeMinimum": "Annual sum of both pensions",
+    "formulaTotal": "Annual total / 12",
+    "minimumChecks": "Details needed to estimate the supplement (2026)"
+  },
+  "uk": {
+    "minimumScope": "Моя іспанська пенсія призначається у 2026 році; інших пенсій, крім зазначених, немає.",
+    "minimumIncome": "Я врахував усі доходи, що підлягають обліку. Для чоловіка або дружини на утриманні вказано наш спільний дохід; підтверджую спільне проживання, фінансову залежність і відсутність у них державної пенсії.",
+    "minimumScenario": "Хочу розрахувати сценарій із доплатою за цими даними. Розумію, що INSS має перевірити вимоги, а суму ще не призначено.",
+    "conditionalTotal": "Умовний сценарій: включає орієнтовну доплату за умови виконання наведених нижче вимог.",
+    "minimumFormula": "Розрахунок річної доплати",
+    "minimumTarget": "Орієнтир мінімальної річної пенсії",
+    "minimumCap": "Річне обмеження доплати",
+    "beforeMinimum": "Річна сума обох пенсій",
+    "formulaTotal": "Загальна річна сума / 12",
+    "minimumChecks": "Дані для оцінки доплати (2026)"
+  },
+  "ru": {
+    "minimumScope": "Моя испанская пенсия назначается в 2026 году; других пенсий, кроме указанных, нет.",
+    "minimumIncome": "Я включил все учитываемые доходы. Для супруга на иждивении указан наш общий доход; подтверждаю совместное проживание, финансовую зависимость и отсутствие у супруга государственной пенсии.",
+    "minimumScenario": "Хочу рассчитать сценарий с доплатой по этим данным. Понимаю, что INSS должен проверить требования, а сумма ещё не назначена.",
+    "conditionalTotal": "Условный сценарий: включает ориентировочную доплату при выполнении приведённых ниже требований.",
+    "minimumFormula": "Расчёт годовой доплаты",
+    "minimumTarget": "Ориентир минимальной годовой пенсии",
+    "minimumCap": "Годовой предел доплаты",
+    "beforeMinimum": "Годовая сумма обеих пенсий",
+    "formulaTotal": "Общая годовая сумма / 12",
+    "minimumChecks": "Данные для оценки доплаты (2026)"
+  }
+};
+for(const lang of Object.keys(resultText))Object.assign(resultText[lang],supplementText[lang]);

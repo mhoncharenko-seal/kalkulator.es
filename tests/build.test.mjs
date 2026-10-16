@@ -51,7 +51,7 @@ test('isolated builds preserve translated form structure, assets, FAQ, SEO and e
    }
    for(const file of fs.readdirSync(dist).filter(f=>f.endsWith('.mjs'))){
     const code=fs.readFileSync(path.join(dist,file),'utf8');
-    for(const dependency of code.matchAll(/from\s+['"]\.\/([^'"]+)['"]/g))assert.ok(fs.existsSync(path.join(dist,dependency[1])),`${file}: ${dependency[1]}`);
+    for(const dependency of code.matchAll(/from\s+['"]\.\/([^'"]+)['"]/g))assert.ok(fs.existsSync(path.join(dist,dependency[1].split('?')[0])),`${file}: ${dependency[1]}`);
    }
    assert.ok(!fs.existsSync(path.join(dist,'blog/drafts/private.md')));
    assert.ok(fs.readFileSync(path.join(dist,'docs/.htaccess'),'utf8').includes('X-Robots-Tag "noindex, nofollow"'));
