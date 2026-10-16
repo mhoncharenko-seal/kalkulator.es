@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {translations,locales,localeNames,intlLocales} from '../i18n.mjs';
 
 test('four locales have identical, nonempty translation keys',()=>{
- assert.deepEqual(locales,['es','ru','uk','en']);
+ assert.deepEqual(locales,['es','uk','en','ru']);
  const reference=Object.keys(translations.es).sort();
  for(const locale of locales){
   assert.deepEqual(Object.keys(translations[locale]).sort(),reference,locale);

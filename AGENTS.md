@@ -1,6 +1,6 @@
 # Kalkulator.es
 
-- NUNCA utilizar banderas: ni emojis, imágenes, SVG ni iconos. Idiomas exclusivamente ES · RU · UK · EN; código BCP47 ucraniano `uk`.
+- NUNCA utilizar banderas: ni emojis, imágenes, SVG ni iconos. Idiomas exclusivamente ES · UK · EN · RU; Orden permanente: español, ucraniano, inglés, ruso. Ucraniano y ruso nunca adyacentes en selectores. Código BCP47 ucraniano `uk`.
 - Conservar identidad visual: fondo crema, verde oscuro, acento terracota, Arial/Helvetica, tarjetas y controles grandes.
 - Producción es estática; sin bases de datos ni servidor Node. Node >=20 solo para construir/probar.
 - `catalog.mjs` registra módulos. Cada módulo activo declara ruta, plantilla y módulo de contenido; el build genera páginas por idioma, SEO y sitemap. Inactivos no generan rutas.

@@ -1,4 +1,4 @@
-export const locales = ['es', 'ru', 'uk', 'en'];
+export const locales = ['es', 'uk', 'en', 'ru'];
 export const localeNames = { es: 'Español', uk: 'Українська', en: 'English', ru: 'Русский' };
 export const intlLocales = { es: 'es-ES', uk: 'uk-UA', en: 'en-GB', ru: 'ru-RU' };
 export const translations = {
