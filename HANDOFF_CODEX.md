@@ -42,3 +42,6 @@ Despliegue kalkulator_20261017_020000.zip verificado en Hostinger: ocho recorrid
 
 ## UX y períodos prospectivos · 17.10.2026
 Pregunta española en años y meses; Ucrania reciente y solapamientos opcionales. Motor permite carencia específica suficientemente acreditada en España sin inventar períodos ucranianos; menos de dos años con Ucrania desconocida produce revisión. Totales prospectivos y validaciones preservados. Comparación con jerarquía visual, refinamiento antes del gráfico con nodo persistente (no pierde foco), estados alternativos sin importes y cálculo de espera con transición normativa anual. 80 pruebas pasan, 8 recorridos completos (axe local sin incidencias) y 16 recorridos alternativos/convenio. ITP permanece inactivo. Pendiente verificación pública de este despliegue.
+
+Publicación completada mediante hPanel tras timeout del conector. ZIP kalkulator_20261017_023000.zip extraído sobre public_html del sitio autorizado; ZIP movido a papelera, copia local conservada. Verificados 8 recorridos completos publicados (4 idiomas x móvil/escritorio) y 16 alternativos/convenio. Captura outputs/formulario-publicado.png. ITP continúa sin activar. No queda pendiente el despliegue.
+
