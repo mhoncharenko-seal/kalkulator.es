@@ -29,3 +29,7 @@ small,.notice,.aside-note{font-size:16px}nav a{white-space:nowrap}textarea:focus
 .calculator-card.is-coming{background:#f0f0f0;color:#555;border-color:#ddd}.is-coming .card-top{background:#e1e1e1;color:#666}
 .coming-stamp{border:0;padding:0;font-family:inherit;font-size:12px;letter-spacing:0;text-transform:none;line-height:1.35;color:#555}
 @media(max-width:650px){.calculator-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}.calculator-card{min-height:168px;padding:12px 8px}.card-title{font-size:15px}.home-hero{padding:22px 0}.availability{font-size:13px}}
+
+/* Existing pension hero graph orange, shared without changing the base palette. */
+:root{--brand-accent:#d4784c}.brand span{color:var(--brand-accent);background:var(--green);padding:0 5px;border-radius:3px;font-weight:700}.hero-art path:last-of-type{stroke:var(--brand-accent)}.hero-art circle{fill:var(--brand-accent)}.part-2{background:var(--brand-accent)}.ukraine-result{border-left:4px solid var(--brand-accent);padding-left:12px}.ukraine-result strong{background:var(--green);color:var(--brand-accent);padding:2px 8px;border-radius:3px}.informational-warning{border-left:4px solid var(--brand-accent);padding:12px 16px;background:#f7f5ef}.is-live .card-bottom span:last-child{background:var(--brand-accent);color:var(--green);border-radius:50%;width:22px}.legal-notice{border-left-color:var(--brand-accent)}
+.ukraine-result strong{font-size:24px;font-weight:700}

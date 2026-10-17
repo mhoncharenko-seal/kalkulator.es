@@ -10,7 +10,7 @@ const $=s=>document.querySelector(s),t=k=>translations[lang][k]??k;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>v==null?t('notAvailable'):new Intl.NumberFormat(intlLocales[lang],{style:'currency',currency:'EUR'}).format(v);
 const num=v=>new Intl.NumberFormat(intlLocales[lang],{maximumFractionDigits:2}).format(v);
-const row=(key,value)=>`<div class="row"><span>${esc(t(key))}</span><strong>${esc(value)}</strong></div>`;
+const row=(key,value)=>`<div class="row ${key==='ukrainePart'?'ukraine-result':''}"><span>${esc(t(key))}</span><strong>${esc(value)}</strong></div>`;
 const stepNames=['stepSpain','stepUkraine','stepAge','stepBase','stepUkrainePension','stepFamily','stepResolution'];
 const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 function values(form){return Object.fromEntries([...new FormData(form)].map(([k,v])=>[k,form.elements[k].type==='number'?(v===''?null:Number(v)):v]));}
@@ -26,7 +26,7 @@ function translate(){
 }
 function renderEligibility(){
  const e=current,key=e.ageBoundaryUncertain?'ageApproximateReview':e.status==='potential'?(e.ageReached?'eligible':'agePending'):e.status==='insufficient'?'missing':'unknown';
- $('#result').innerHTML=`${lastMoney?'':`<h2 class="result-title">${esc(t(key))}</h2>`}<details ${lastMoney?'':'open'}><summary>${esc(t('eligibilityDetails'))}</summary>${lastMoney?`<p>${esc(t(key))}</p>`:''}${row('age',`${Math.floor(e.ordinaryAgeMonths/12)} ${t('years').toLowerCase()} ${e.ordinaryAgeMonths%12} ${t('months').toLowerCase()}`)}${row('totalYears',num(e.totalMonths/12))}${e.missingMonths?row('remaining',`${num(e.missingMonths/12)} ${t('years').toLowerCase()}`):''}${e.missingRecentMonths?row('recentMissing',`${e.missingRecentMonths} ${t('months').toLowerCase()}`):''}<p>${esc(t('ageAssumptions'))}</p><p>${esc(t('recentAssumptions'))}</p></details>`;
+ $('#result').innerHTML=`${lastMoney?'':`<h2 class="result-title ${e.status==='insufficient'?'informational-warning':''}">${esc(t(key))}</h2>`}<details ${lastMoney?'':'open'}><summary>${esc(t('eligibilityDetails'))}</summary>${lastMoney?`<p>${esc(t(key))}</p>`:''}${row('age',`${Math.floor(e.ordinaryAgeMonths/12)} ${t('years').toLowerCase()} ${e.ordinaryAgeMonths%12} ${t('months').toLowerCase()}`)}${row('totalYears',num(e.totalMonths/12))}${e.missingMonths?row('remaining',`${num(e.missingMonths/12)} ${t('years').toLowerCase()}`):''}${e.missingRecentMonths?row('recentMissing',`${e.missingRecentMonths} ${t('months').toLowerCase()}`):''}<p>${esc(t('ageAssumptions'))}</p><p>${esc(t('recentAssumptions'))}</p></details>`;
 }
 function renderMoney(){
  const r=lastMoney,c=lastMinimum,amount=simplifiedAmounts(values($('#amount')).contributionBase,values($('#amount')).ukraineAmount);
@@ -47,7 +47,7 @@ function setupWizard(){
  const eligibility=$('#eligibility'),amount=$('#amount'),label=name=>document.querySelector(`[name="${name}"]`).closest('label');
  function screen(parent,step,nodes){const el=document.createElement('div');el.dataset.screen=step;for(const node of nodes)if(node)el.append(node);parent.append(el);return el;}
  for(const [i,country] of ['spain','ukraine'].entries())screen(eligibility,i+1,[label(country+'Years')]);
- const recent=$('#recent-fields');recent.hidden=false;const ageScreen=screen(eligibility,3,[label('ageYears'),label('retirementDate'),recent,$('#error')]); ageScreen.insertAdjacentHTML('beforeend','<label class="check-label"><input type="checkbox" name="periodsConfirmed" required><span data-t="confirmPeriods"></span></label><p class="notice" data-t="periodReview"></p>');
+ const recent=$('#recent-fields');recent.hidden=false;const ageScreen=screen(eligibility,3,[label('ageYears'),label('retirementDate'),recent,$('#error')]); ageScreen.insertAdjacentHTML('beforeend','<p class="notice" data-t="periodAssumption"></p><p class="notice" data-t="periodReview"></p>');
  for(const el of eligibility.querySelectorAll('button,.step-caption'))el.hidden=true;$('#initial-fields').remove();
  $('#eligibility [name="retirementDate"]').min=today();
  const baseScreen=screen(amount,4,[label('contributionBase'),$('#base-help-link'),$('#base-help')]); baseScreen.insertAdjacentHTML('beforeend','<label class="check-label"><input type="checkbox" name="baseConfirmed" required><span data-t="confirmBase"></span></label>');
@@ -64,7 +64,7 @@ function setupWizard(){
  $('#amount [name="ukraineAmount"]').placeholder='80';
 }
 function showStep(step,focus=true){
- wizardStep=step;document.querySelectorAll('[data-screen]').forEach(el=>el.hidden=Number(el.dataset.screen)!==step);
+ wizardStep=step;for(const country of ['spain','ukraine']){const cap=Number($('[name="'+country+'Years"]').value);$('[name="recent'+country[0].toUpperCase()+country.slice(1)+'Years"]').max=Math.min(15,cap);}document.querySelectorAll('[data-screen]').forEach(el=>el.hidden=Number(el.dataset.screen)!==step);
  $('#eligibility').hidden=step>3;$('#amount').hidden=step<4||step>5;$('#result').hidden=step!==7;$('#money').hidden=step!==7||!lastMoney;
  $('#wizard-caption').textContent=`${t('stepLabel')} ${step} / 7`;$('#wizard-progress').value=step;$('#wizard-progress').setAttribute('aria-label',t('stepLabel'));$('#wizard-title').textContent=t(stepNames[step-1]);
  $('#wizard-back').hidden=step===1;$('#wizard-next').hidden=step===7;$('#wizard-reset').hidden=step!==7;$('#wizard-next').textContent=t(step===6?'check':'continue');

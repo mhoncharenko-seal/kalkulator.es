@@ -20,3 +20,7 @@ El bloque principal suma ahora el escenario condicionado de complemento de 2026 
 Portada compacta: iconos 32px con tamaño SVG intrínseco, accesos 132px mínimos en escritorio/118px móvil, nombres y disponibilidad visibles. Recursos CSS/JS con versión de contenido para evitar caché antigua. 58 pruebas y 16 auditorías locales pasan.
 Orden de idiomas corregido por petición expresa: ES · UK · EN · RU en portada y calculadora, con regla permanente en AGENTS.md.
 Etiquetas visibles actualizadas por petición del usuario: Es · Ukr · En · Rus; rutas y códigos de idioma sin cambios.
+
+## Refinamiento 17.10.2026
+Acento existente del gráfico hero #d4784c compartido. Cotización reciente en cuartos de año (3 meses exactos), hipótesis sin casilla. 60 pruebas pasan; recorridos y axe locales 4 idiomas x 390/1280 sin incidencias. ITP sigue pendiente: agentes interrumpidos por límite de uso, no hay módulo publicado. Publicación de este refinamiento por verificar.
+
