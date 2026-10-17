@@ -33,3 +33,9 @@ Preparado itp-engine.mjs y scripts/build-itp-draft.mjs. Genera cuatro páginas a
 
 Despliegue comparación verificado en Hostinger: 8 recorridos reales (4 idiomas x 390/1280), sin errores JavaScript ni desbordamiento; importe condicionado 913,60 y base 180,00 en el ejemplo. Auditoría axe realizada localmente. ITP borrador: 4 recorridos locales pasan; catálogo público permanece desactivado. Archivo de despliegue kalkulator_20261017_011500.zip. Rama codex/mision-integral, PR #2.
 
+
+## Simplificación automática · 17.10.2026
+Comparación directa desde paso 5, sin pantalla previa de complemento y sin casilla obligatoria de base. minimum-simulation.mjs separa hipótesis favorables y afinado. Desplegable después de resultados: familia, ingresos propios, otras pensiones y datos progresivos del cónyuge; recalcula sin tocar columna base y preserva el foco del formulario. 74 pruebas y 8 recorridos locales (4 idiomas x 390/1280) pasan; axe sin incidencias. ITP continúa privado/inactivo. Pendiente verificar despliegue de esta revisión.
+
+Despliegue kalkulator_20261017_020000.zip verificado en Hostinger: ocho recorridos publicados (cuatro idiomas, móvil/escritorio), simulación automática y cambios de cónyuge correctos; columna sin complemento estable. Backups previos conservados. GitHub PR #2 actualizado.
+

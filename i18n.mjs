@@ -87,3 +87,6 @@ for(const [locale,items] of Object.entries(refinement))for(const [i,key] of ["re
 
 import {comparisonText} from './comparison-i18n.mjs';
 for(const locale of locales)Object.assign(translations[locale],comparisonText[locale],{stepFamily:comparisonText[locale].optionalMinimum});
+
+import {refinementText} from './refinement-i18n.mjs';
+for(const [locale,items] of Object.entries(refinementText))for(const [i,key] of ['refineTitle','favourableAssumptions','ownIncome','otherPensions','cohabit','spousePension','spousePensionAnnual','spouseIncome','yes','no','unverified','usedData','usedIncome','dependencyHelp','pending','legalComparison','legalComparison2','restoreBasic','incomeDetailHelp','refinedAssumptions','pendingHelp'].entries())translations[locale][key]=items[i];
