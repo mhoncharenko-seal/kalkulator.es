@@ -12,3 +12,4 @@
 - Ejecutar `npm test`, `npm run build`; probar recorrido, navegación de idiomas, móvil y teclado antes de publicar. No declarar Lighthouse/WCAG sin mediciones.
 - Antes de desplegar: inspeccionar destino, guardar respaldo, comprobar build y versión remota. Solo sitio pink-eagle-584038.hostingersite.com cuenta u531355009 autorizado; DNS definitivo requiere autorización específica.
 - Actualizar HANDOFF_CODEX.md con rama, pruebas y estado real. No publicar documentación operativa interna.
+- Pregunta reciente española en años y meses exactos; Ucrania reciente desconocida no es cero ni denegación. Descontar solapamientos indicados. El refinamiento se sitúa antes del gráfico y los estados sin acceso no muestran importes normales.

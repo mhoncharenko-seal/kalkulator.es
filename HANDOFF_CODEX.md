@@ -39,3 +39,6 @@ Comparación directa desde paso 5, sin pantalla previa de complemento y sin casi
 
 Despliegue kalkulator_20261017_020000.zip verificado en Hostinger: ocho recorridos publicados (cuatro idiomas, móvil/escritorio), simulación automática y cambios de cónyuge correctos; columna sin complemento estable. Backups previos conservados. GitHub PR #2 actualizado.
 
+
+## UX y períodos prospectivos · 17.10.2026
+Pregunta española en años y meses; Ucrania reciente y solapamientos opcionales. Motor permite carencia específica suficientemente acreditada en España sin inventar períodos ucranianos; menos de dos años con Ucrania desconocida produce revisión. Totales prospectivos y validaciones preservados. Comparación con jerarquía visual, refinamiento antes del gráfico con nodo persistente (no pierde foco), estados alternativos sin importes y cálculo de espera con transición normativa anual. 80 pruebas pasan, 8 recorridos completos (axe local sin incidencias) y 16 recorridos alternativos/convenio. ITP permanece inactivo. Pendiente verificación pública de este despliegue.

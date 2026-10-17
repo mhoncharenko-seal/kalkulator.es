@@ -35,15 +35,15 @@ export function evaluateEligibility(input={}) {
   const ageUpperMonths=ageMonths+(ageInput?11:0);
   if (totalMonths>ageMonths) return {status:'invalid',errors:['impossible-duration']};
   const ordinaryAgeMonths=retirementAge(year,totalMonths);
-  const recentKnown=rs!=null&&ru!=null&&referenceConfirmed;
-  const specificMonths=recentKnown?rs+ru-ro:null;
+  const recentKnown=referenceConfirmed&&rs!=null&&(ru!=null||rs-ro>=24);
+  const specificMonths=recentKnown?rs+(ru??0)-ro:null;
   if (rs!=null&&ru!=null&&(rs+ru-ro>Math.min(180,totalMonths)||o-ro>Math.min(s-rs,u-ru))) return {status:'invalid',errors:['invalid-recent-union']};
   const nationalEligible=referenceConfirmed&&rs!=null ? s>=180&&rs>=24 : null;
   const treatyEligible=recentKnown ? totalMonths>=180&&specificMonths>=24&&s>=12 : null;
   const missingMonths=Math.max(0,180-totalMonths);
   const reasons=[];
   if (!referenceConfirmed) reasons.push('reference-window');
-  if (rs==null||ru==null) reasons.push('recent-unknown');
+  if (!recentKnown) reasons.push('recent-unknown');
   if (s<12) reasons.push('spain-under-one-year');
   if (u>0&&u<12) reasons.push('ukraine-under-one-year');
   if (o>0) reasons.push('overlap-deducted');

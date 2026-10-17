@@ -71,3 +71,12 @@ Revisados RD 241/2026 arts. 9.2, 10.1–4 y 18.2–6 (BOE-A-2026-6977), LGSS art
 El afinado sustituye las hipótesis por entradas. Cónyuge a cargo necesita convivencia, ausencia de pensión pública/prestación incompatible e ingresos conjuntos inferiores a 11.013 euros. Una pensión pública del cónyuge dirige al mínimo no a cargo sin sumarla a las pensiones personales. Convivencia desconocida/negativa o dependencia incompleta queda pendiente. Otros ingresos por encima de 9.442 euros en el supuesto sin cónyuge a cargo aplican la diferencia del art. 9.2, limitada por el déficit y el tope legal. Otros ingresos no sustituyen ni duplican las pensiones anuales. Otras pensiones propias y situaciones fuera del alcance requieren revisión, manteniendo el escenario sin complemento sin cambios.
 
 Las reglas de 2026 no se extrapolan a otro año. Importes desconocidos no se convierten en cero. La información es una simulación condicionada y no una resolución administrativa.
+
+## Pregunta prospectiva y resultados · 17.10.2026
+El formulario pregunta por cotización española en los 15 años anteriores a la jubilación prevista, separando años enteros y meses (0–11). Se convierte sin redondeo a meses; 15 años y 1 mes se rechaza. La cotización reciente no puede superar la española total declarada hasta esa fecha ni los períodos cronológicamente posibles. Los períodos ucranianos recientes y solapamientos se indican opcionalmente; no informar Ucrania no equivale a cero.
+
+LGSS 205.1.b y convenio arts. 10 y 11: si la cotización española reciente conocida basta, no se necesita otra pregunta para la carencia específica. Si no basta y Ucrania es desconocida, se exige revisión, no se declara insuficiencia. Con datos ucranianos se totaliza sin duplicar solapamientos. Los períodos inferiores a un año y las situaciones con distinta fecha de referencia siguen sujetos a revisión individual. Las asignaciones económicas de períodos solapados requieren verificación específica.
+
+Resultados sin edad suficiente o cotización suficiente no muestran columnas monetarias. El tiempo pendiente utiliza el calendario legal de edad (art. 205.1.a y DT 7), incluso al cruzar a un año futuro; por introducir edad en años cumplidos se presenta un intervalo orientativo respecto de la fecha seleccionada, sin nuevas cotizaciones no declaradas. No se confunde revisión pendiente con denegación.
+
+Referencias adicionales: LGSS art. 51 (residencia) y art. 59 (complementos), convenio art. 10.4 y RD 241/2026 art. 18. La presentación conserva el carácter condicionado del complemento.
