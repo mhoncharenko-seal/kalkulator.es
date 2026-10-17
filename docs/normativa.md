@@ -51,3 +51,16 @@ Comprobación directa de fuentes oficiales:
 - [RD 241/2026, art.3, arts.16.2 y 18 y anexo I](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977): confirmados máximo y mínimos de 2026. El art.18 combina mínimo proporcional, garantía residente y límites. La interfaz permite incluir un complemento estimado en el total de un escenario de 2026 si el usuario confirma inicio en ese ejercicio, ausencia de otras pensiones, ingresos completos y requisitos conyugales. Exige residencia española, importe ucraniano conocido e ingresos dentro del umbral. Aplica déficit anual y tope de los arts. 9, 10 y 18; no certifica la concesión. En otros casos muestra Por verificar.
 
 Verificación referida a jubilación ordinaria y normativa aprobada consultada en esa fecha. No certifica períodos ni resoluciones individuales.
+
+## Comparación de escenarios · revisión 17.10.2026
+
+Fuentes verificadas: LGSS art. 59, Convenio España–Ucrania y RD 241/2026 arts. 9, 10, 16 y 18, anexos de 2026.
+- https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a59
+- https://www.boe.es/buscar/act.php?id=BOE-A-1998-8056
+- https://www.boe.es/buscar/doc.php?id=BOE-A-2026-6977#a18
+
+La nueva interfaz compara idénticas pensiones anuales con y sin suplemento. La residencia ya no se pregunta: el escenario con suplemento supone residencia habitual en España y cumplimiento de los demás requisitos, expresamente condicionado. Sin datos completos se mantiene pendiente, incluso en el gráfico.
+
+El art. 18 distingue el mínimo prorrateado y la garantía bilateral para residentes. El escenario limitado a pensión iniciada en 2026, sin otras pensiones, aplica la garantía del apartado 3 junto con los topes del apartado 6; no interpreta la resta simple como regla universal. Los ingresos superiores al umbral requieren revisión de la regla diferencial y no se clasifican automáticamente como exclusión. Se mantienen la concurrencia anual, los límites de 9.442/11.013 euros, los topes de 8.803,20/14.965,44 euros y la comprobación conyugal. Las pensiones extranjeras deben introducirse convertidas a euros con la referencia legal correspondiente (art. 18.5). Para otros ejercicios no se proyectan mínimos de 2026.
+
+España se anualiza con 14 pagas y Ucrania con 12; ambas columnas y el gráfico se expresan como anual/12. Los porcentajes usan el total conocido de cada escenario; las barras comparten escala. La estimación no acredita derechos ni sustituye al INSS.

@@ -14,3 +14,9 @@ export function composition(result, minimum) {
  const subtotal=amounts.reduce((sum,x)=>sum+(x??0),0);
  return {amounts,subtotal,total:amounts.every(x=>x!=null)?subtotal:null,shares:amounts.map(x=>x==null||subtotal===0?0:x/subtotal*100)};
 }
+
+/** Comparable annual amounts. A pending component never manufactures a total. */
+export function compareScenarios(result,minimum){
+ const withMinimum=composition(result,minimum),withoutMinimum=composition(result,{annual:0});
+ return {withMinimum,withoutMinimum,difference:withMinimum.total==null||withoutMinimum.total==null?null:withMinimum.total-withoutMinimum.total,scale:Math.max(withMinimum.subtotal,withoutMinimum.subtotal,1)};
+}

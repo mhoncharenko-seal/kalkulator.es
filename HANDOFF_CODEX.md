@@ -24,3 +24,12 @@ Etiquetas visibles actualizadas por petición del usuario: Es · Ukr · En · Ru
 ## Refinamiento 17.10.2026
 Acento existente del gráfico hero #d4784c compartido. Cotización reciente en cuartos de año (3 meses exactos), hipótesis sin casilla. 60 pruebas pasan; recorridos y axe locales 4 idiomas x 390/1280 sin incidencias. ITP sigue pendiente: agentes interrumpidos por límite de uso, no hay módulo publicado. Publicación de este refinamiento por verificar.
 
+
+## Comparación de pensiones · 17.10.2026
+Módulos nuevos comparison-view.mjs/comparison-i18n.mjs; modelo compareScenarios en pension-result.mjs. Sin pregunta de residencia, detalle opcional, dos escenarios y gráfico común; datos incompletos no fabrican complemento. 66 pruebas pasan y 8 recorridos locales (4 idiomas x móvil/escritorio), axe sin incidencias. No cambia el motor jurídico. Fuentes revisadas en docs/normativa.md. Destino autorizado y respaldo previo conservados. Verificar despliegue tras subir ZIP.
+
+## ITP Cataluña · borrador privado 17.10.2026
+Preparado itp-engine.mjs y scripts/build-itp-draft.mjs. Genera cuatro páginas autocontenidas en ../outputs/itp-borrador. No se activa el catálogo, no hay ruta pública ni inclusión de estos archivos en dist. Alcance: compraventa ordinaria de segunda mano en pleno dominio, tarifa general y jóvenes condicionada; otras operaciones/beneficios quedan pendientes. Fuentes ATC de tarifas y base imponible consultadas el 17.10.2026. Antes de activarlo, ampliar supuestos especiales, completar revisión fiscal y revisar redondeos del modelo 600. Pruebas de tramos, referencia/mercado, participación, condiciones TUJ y fechas incluidas. Total de pruebas del proyecto: 69.
+
+Despliegue comparación verificado en Hostinger: 8 recorridos reales (4 idiomas x 390/1280), sin errores JavaScript ni desbordamiento; importe condicionado 913,60 y base 180,00 en el ejemplo. Auditoría axe realizada localmente. ITP borrador: 4 recorridos locales pasan; catálogo público permanece desactivado. Archivo de despliegue kalkulator_20261017_011500.zip. Rama codex/mision-integral, PR #2.
+
