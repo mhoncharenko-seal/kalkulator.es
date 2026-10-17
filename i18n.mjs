@@ -86,6 +86,8 @@ const refinement={"es":["Años cotizados en España durante los últimos 15 año
 for(const [locale,items] of Object.entries(refinement))for(const [i,key] of ["recentSpain","recentUkraine","recentYearsHelp","periodAssumption","missing","remaining","recentMissing"].entries())translations[locale][key]=items[i];
 
 import {comparisonText} from './comparison-i18n.mjs';
+import {capText} from './cap-i18n.mjs';
+for(const locale of locales)Object.assign(translations[locale],capText[locale]);
 for(const locale of locales)Object.assign(translations[locale],comparisonText[locale],{stepFamily:comparisonText[locale].optionalMinimum});
 
 import {refinementText} from './refinement-i18n.mjs';

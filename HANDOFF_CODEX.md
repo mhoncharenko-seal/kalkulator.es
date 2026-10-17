@@ -45,3 +45,7 @@ Pregunta española en años y meses; Ucrania reciente y solapamientos opcionales
 
 Publicación completada mediante hPanel tras timeout del conector. ZIP kalkulator_20261017_023000.zip extraído sobre public_html del sitio autorizado; ZIP movido a papelera, copia local conservada. Verificados 8 recorridos completos publicados (4 idiomas x móvil/escritorio) y 16 alternativos/convenio. Captura outputs/formulario-publicado.png. ITP continúa sin activar. No queda pendiente el despliegue.
 
+
+## Revisión de bases bajas · 17.10.2026
+RD 241/2026, art.18.3 y 18.6, remite expresamente al límite de art.9.5 y 10.4 para pensiones causadas desde 2013. Se conserva el tope legal: no existe garantía incondicional de alcanzar el mínimo cuando las pensiones son muy bajas. Aviso visible junto al total en cuatro idiomas, referencia anual y promedio mensual, tope y diferencia no cubierta. Matriz de 18 escenarios (tres situaciones familiares, importes muy bajos, umbral, sin tope y sin complemento); 82 pruebas pasan y ocho recorridos móvil/escritorio con axe sin incidencias. Pendiente verificación pública de esta revisión. Rama codex/mision-integral, PR #2.
+Publicación verificada en el sitio autorizado mediante hPanel: paquete kalkulator_20261017_minimos.zip extraído y movido después a papelera. Ocho recorridos públicos comprueban el nuevo aviso, los importes y el refinamiento en cuatro idiomas y móvil/escritorio. Captura outputs/minimos-publicados.png. Revisión publicada, sin pendientes de despliegue; conserva el motor jurídico y los topes.
