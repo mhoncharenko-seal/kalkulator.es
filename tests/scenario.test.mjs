@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {simplifiedPeriods,simplifiedAmounts} from '../scenario.mjs';
+import {simplifiedPeriods,simplifiedAmounts,recentMonths} from '../scenario.mjs';
 import {evaluateEligibility,estimatePension,assessMinimum} from '../engine.mjs';
-const data={spainYears:10,ukraineYears:20,recentSpainMonths:24,recentUkraineMonths:0,ageYears:67,retirementDate:'2026-10-16'};
+const data={spainYears:10,ukraineYears:20,recentSpainYears:2,recentUkraineYears:0,ageYears:67,retirementDate:'2026-10-16'};
 test('whole contribution years and current age reach the engine without a fabricated birth date',()=>{
  const p=simplifiedPeriods(data,'2026-10-16');assert.equal(p.spainMonths,120);assert.equal(p.ukraineMonths,240);assert.equal(p.birthDate,undefined);
  const e=evaluateEligibility(p);assert.equal(e.status,'potential');assert.equal(e.ageMonths,804);assert.equal(e.ageApproximate,true);assert.equal(e.ageReached,true);
@@ -23,6 +23,9 @@ test('payroll contribution base is explicitly converted and Ukrainian euros are 
  const c=assessMinimum({residentSpain:false,annualOtherIncome:0,annualSpanish:r.spanish.annual,annualUkraine:r.ukraine.annual});assert.equal(c.annual,0);assert.ok(Math.abs((r.totalAnnual+c.annual)/12-477.5066666667)<1e-8);
 });
 test('empty and invalid amounts cannot silently become zero pensions or calculation bases',()=>{
- for(const values of [[null,80],[0,80],[1400,null],[1400,-1],[NaN,80]])assert.equal(simplifiedAmounts(...values),null);
+ for(const values of [[null,80],[0,80],[1400,-1],[NaN,80]])assert.equal(simplifiedAmounts(...values),null);
  assert.equal(simplifiedAmounts(1400,0).ukraineAmount,0);
 });
+
+test('recent years convert exactly and reject missing, ambiguous and excessive fractions',()=>{for(const [years,months] of [[0,0],[0.25,3],[0.5,6],[0.75,9],[2,24],[15,180]])assert.equal(recentMonths(years),months);for(const n of [null,undefined,-1,15.25,0.1,NaN])assert.ok(Number.isNaN(recentMonths(n)));});
+test('recent years cannot exceed country totals and assumed overlaps remain zero',()=>{const p=simplifiedPeriods({...data,spainYears:1,recentSpainYears:2},'2026-10-16');assert.equal(evaluateEligibility(p).status,'invalid');assert.equal(p.overlapMonths,0);assert.equal(p.recentOverlapMonths,0);});
